@@ -11,6 +11,8 @@
   const hoursEl = document.getElementById('cd-hours');
   const minsEl = document.getElementById('cd-mins');
   const secsEl = document.getElementById('cd-secs');
+  const arrivedEl = document.getElementById('countdownArrived');
+  let timerId = null;
 
   function nowInIST() {
     // Get current time expressed as IST wall-clock fields
