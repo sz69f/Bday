@@ -154,7 +154,7 @@
    ============================================ */
 (function () {
   const layer = document.getElementById('heartLayer');
-  const glyphs = ['❤', '💕', '💗', '💖'];
+  const glyphs = ['❤', '💕','💞','🎀', '💗', '💖'];
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (reduceMotion) return;
