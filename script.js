@@ -40,7 +40,23 @@
     return target;
   }
 
+  function isBirthdayTodayIST() {
+    const istDate = new Date(nowInIST());
+    return (istDate.getUTCMonth() + 1) === month && istDate.getUTCDate() === day;
+  }
+
+  function showArrived() {
+    el.style.display = 'none';
+    arrivedEl.style.display = 'block';
+    if (timerId) clearInterval(timerId);
+  }
+
   function tick() {
+    if (isBirthdayTodayIST()) {
+      showArrived();
+      return;
+    }
+
     const target = nextBirthdayIST();
     const diff = Math.max(0, target - nowInIST());
 
@@ -56,7 +72,7 @@
   }
 
   tick();
-  setInterval(tick, 1000);
+  timerId = setInterval(tick, 1000);
 })();
 
 /* ============================================
